@@ -1,9 +1,13 @@
-erro = float(input ('digite o erro: '))
+#erro = float(input ('digite o erro: '))
+#erro_dif = erro
+#maximo_interações = int(input ('digite o maximo de interações: '))
+#chute = float(input ('digite o teste inicial: '))
+erro = 0.001
 erro_dif = erro
-maximo_interações = int(input ('digite o maximo de interações: '))
-chute = float(input ('digite o teste inicial: '))
-matriz_indices = [[11,7,305],[901,18,298],[12,210,8]]
-matriz_resultado = [20,50,10]
+maximo_interações =1000
+chute = 0
+matriz_indices = [[3,1,-5],[4,-1,1],[1,2,-1]]
+matriz_resultado = [10,7,15]
 valores_calculos = [chute,chute,chute]
 valores_anteriores = [0,0,0]
 matriz_variaveis = ['X','Y','Z']
@@ -16,11 +20,11 @@ def maior_numero(matriz):
         for indicey, y in enumerate(x):
             if (indicey == 0): 
                 maior = indicey
-            elif (x[maior]<y):
+            elif (modulo(x[maior])<modulo(y)):
                 maior = indicey
         vetor_resultado.append(maior) 
-    #print ("vetor dos maiores") 
-    #print (vetor_resultado)
+    print ("vetor dos maiores") 
+    print (vetor_resultado)
     return vetor_resultado
     
 
@@ -33,13 +37,13 @@ def verifica_matriz(matriz):
                 soma_elementos = 0
                 for elemento in x: 
                     if (elemento_da_linha != elemento):
-                            soma_elementos+=elemento
-                if (elemento_da_linha >= soma_elementos): 
+                            soma_elementos+=modulo(elemento)
+                if (modulo(elemento_da_linha) >= soma_elementos): 
                     matriz_resultado.append(1)
                 else: 
                     matriz_resultado.append(0)
 
-    #print (matriz_resultado)
+    print (matriz_resultado)
     return matriz_resultado
 
 
@@ -89,6 +93,8 @@ def modulo(valor):
         
 print('\n______________________________\n')
 organizacao, matriz_indices,matriz_resultado = organiza_matriz(matriz_indices, matriz_resultado)
+print(matriz_indices)
+print(matriz_resultado)
 if (organizacao): 
     print('A matriz foi organizada!')
 else: 
@@ -130,7 +136,6 @@ for x in range(0,maximo_interações):
         else: 
             erro_dif = erro_dif/100
        
-
 
 
 
