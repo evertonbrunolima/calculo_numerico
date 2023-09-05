@@ -24,7 +24,7 @@ def metodo_exec():
     while (True): 
         n1 = float(input('digite o primeiro numero do intervalo: '))
         n2 = float(input('digite o segundo numero do intervalo: '))
-        if (f(n1)*f(n2) < 0): 
+        if (f(n1)*f(n2) < 0):  
             break 
         else:
             print('dados errados!')
@@ -34,12 +34,13 @@ def metodo_exec():
     for i in range (escape):
         media = (n1+n2)/2 
         if (modulo(f(media)) < erro): 
-            break
+          print(f' O valor encontrado foi: {media}')
+          break
         if (f(n1)*f(media)<0): 
             n2 = media;  
         else: 
             n1 = media; 
-        print(f' O valor encontrado foi: {media}')
+        
         print(f"calculo{i} - media={media}")
 
 
