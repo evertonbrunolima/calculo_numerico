@@ -1,7 +1,8 @@
 pontos = [
             [8,9], 
             [10,5],
-            [6,5]
+            [6,5],
+            [10,25]
         ]
 
 A = []
@@ -16,5 +17,15 @@ for indice,ponto in enumerate(pontos):
     X.append(f'X{indice}')
     B.append(ponto[0])
 
-for indice,linha in enumerate(A): 
-    print(f'{linha}\t{X[indice]} = {B[indice]}')
+print('Matriz A:')
+for linha in A: 
+    print(f'{linha}')
+
+print('\nMatriz X:')
+for x in X: 
+    print(f'{x}')
+
+print('\nMatriz B:')
+for b in B: 
+    print(f'{b}')
+
